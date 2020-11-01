@@ -14,7 +14,7 @@ enum DecodingError : Error {
 }
 
 
-class DiscountsModel {
+class DiscountsModel : NSObject {
     var data: [[DiscountData]] = [[]]
     
     let dataKey = "data"
@@ -51,6 +51,7 @@ class DiscountData {
     let discount: String?
     let seller: String?
     let shareData: String?
+    let sellerType : SellerType
     
     enum keys : String {
         case voucherCode = "voucherCode"
@@ -75,8 +76,58 @@ class DiscountData {
             self.discount = dict[keys.discount.rawValue] as? String
             self.seller = dict[keys.seller.rawValue] as? String
             self.shareData = dict[keys.shareData.rawValue] as? String
+            self.sellerType = SellerType.sellerType(forSeller: seller ?? "default")
         } else {
             throw DecodingError.runtimeError("Bad Discount Data")
         }
     }
+    
+    func getDiscount() -> String {
+        return discount?.lowercased().replacingOccurrences(of: "off", with: "") ?? ""
+    }
+}
+
+import UIKit
+
+enum SellerType {
+    case food, event, others
+    
+    static func sellerType(forSeller seller : String) -> SellerType {
+        switch seller {
+        case "swiggy", "zomato", "ubereats":
+            return .food
+        case "bookmyshow":
+            return .event
+        default:
+            return .others
+        }
+    }
+    
+    func brandLogo(forSeller seller : String?) -> UIImage? {
+        if self != .others {
+        //let directory = Bundle.main.path(forResource: "BrandIcons", ofType: nil)
+            let directory = Bundle.main.bundlePath.appending("/SliceDiscountApp/SliceDiscountApp/BrandIcons")
+            if let contentsArray = try? FileManager.default.contentsOfDirectory(atPath: directory) {
+            let sellerName = seller?.lowercased() ?? "default"
+            if contentsArray.contains(sellerName + ".png") {
+                let imageURL = URL(fileURLWithPath: directory).appendingPathComponent(sellerName + ".png")
+                let image = UIImage(contentsOfFile: imageURL.path)
+                return image
+            }
+        }
+        }
+        return UIImage.image(forText: seller ?? "default")
+    }
+    
+    func brandBanner() -> UIImage {
+        switch self {
+        case .event:
+            return #imageLiteral(resourceName: "Event_Banner")
+        case .food:
+            return #imageLiteral(resourceName: "food_banner")
+        default:
+            return #imageLiteral(resourceName: "other_banner")
+        }
+    }
+    
 }

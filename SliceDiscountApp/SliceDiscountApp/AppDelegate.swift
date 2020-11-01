@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        if BusinessModel.shared.discountsData == nil {
-            BusinessModel.shared.loadDiscountData { } OnFailure: { error in
+        if BusinessManager.shared.discountsData == nil {
+            BusinessManager.shared.loadDiscountData { } OnFailure: { error in
                 print(error ?? "Error loading local data")
             }
         }

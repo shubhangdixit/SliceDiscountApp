@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SliceDiscountApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="SliceDiscountApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="134" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="303" id="HDq-sT-jYf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiscountsListTableViewCell" rowHeight="303" id="HDq-sT-jYf" customClass="DiscountsListTableViewCell" customModule="SliceDiscountApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="303"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HDq-sT-jYf" id="zuv-pq-E47">
@@ -110,7 +110,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ddf-Km-Drd">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiscountCardsCollectionViewCell" id="Ddf-Km-Drd" customClass="DiscountCardsCollectionViewCell" customModule="SliceDiscountApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NI5-hX-psP">
@@ -140,16 +140,16 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsN-oQ-Gdc">
-                                                                                <rect key="frame" x="8" y="150" width="75" height="52"/>
+                                                                                <rect key="frame" x="8" y="150" width="76" height="52"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 30% " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62R-LD-1gB">
-                                                                                        <rect key="frame" x="0.0" y="5" width="75" height="24"/>
-                                                                                        <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="24"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 30%  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62R-LD-1gB">
+                                                                                        <rect key="frame" x="0.0" y="5" width="76" height="22"/>
+                                                                                        <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="22"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-Df-Lw9">
-                                                                                        <rect key="frame" x="5" y="32" width="33" height="15"/>
+                                                                                        <rect key="frame" x="5" y="30" width="33" height="15"/>
                                                                                         <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="15"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
@@ -177,6 +177,13 @@
                                                                             <constraint firstAttribute="trailing" secondItem="laN-Fa-Mkg" secondAttribute="trailing" id="wjo-XD-8KR"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="bannerImage" destination="laN-Fa-Mkg" id="vPL-k0-nre"/>
+                                                                        <outlet property="brandImage" destination="abh-QV-B3f" id="OEN-ku-NJV"/>
+                                                                        <outlet property="brandLogoView" destination="XNc-FM-0YT" id="QGd-3x-Wng"/>
+                                                                        <outlet property="offerLabel" destination="62R-LD-1gB" id="me7-hD-ynI"/>
+                                                                        <outlet property="offerView" destination="YsN-oQ-Gdc" id="SNM-Dv-afo"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -190,6 +197,10 @@
                                                 <constraint firstItem="DGh-gX-mFp" firstAttribute="top" secondItem="zuv-pq-E47" secondAttribute="top" id="yJX-J1-RBb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="KTm-F8-pid" id="ma2-wq-HkF"/>
+                                            <outlet property="topView" destination="JGg-G0-EQr" id="Hal-ww-Va8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -206,6 +217,11 @@
                             <constraint firstItem="C9o-e1-wBG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v3P-gY-cG5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="EuZ-aG-3mw" id="cXv-VK-RZv"/>
+                        <outlet property="tableView" destination="C9o-e1-wBG" id="afJ-9h-O0F"/>
+                        <outlet property="topView" destination="lTN-6O-1Pz" id="q3S-cI-0iL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
