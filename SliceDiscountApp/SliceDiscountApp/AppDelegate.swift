@@ -34,7 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if BusinessModel.shared.discountsData == nil {
+            BusinessModel.shared.loadDiscountData { } OnFailure: { error in
+                print(error ?? "Error loading local data")
+            }
+        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
