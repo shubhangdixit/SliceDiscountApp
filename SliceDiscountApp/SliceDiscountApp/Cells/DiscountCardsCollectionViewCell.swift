@@ -21,6 +21,7 @@ class DiscountCardsCollectionViewCell: UICollectionViewCell {
         brandImage.image = data.sellerType.brandLogo(forSeller: data.seller)
         brandLogoView.setCorners(withRadius: homeScreenValues.brandImageCornerRadius)
         offerView.setCorners(withRadius: homeScreenValues.discountLabelCornerRadius)
+        bannerImage.setCorners(withRadius: homeScreenValues.cardsCornerRadius)
         offerLabel.text = data.getDiscount()
     }
 }

@@ -12,6 +12,7 @@
 		9D373A3D254ED518009F9304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D373A3B254ED518009F9304 /* Main.storyboard */; };
 		9D373A3F254ED51A009F9304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D373A3E254ED51A009F9304 /* Assets.xcassets */; };
 		9D373A42254ED51A009F9304 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D373A40254ED51A009F9304 /* LaunchScreen.storyboard */; };
+		9D5CE3332550480400E24F35 /* bookmyshow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5CE3322550480400E24F35 /* bookmyshow.png */; };
 		9D8EE68A254F0B3C002F38FF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE689254F0B3C002F38FF /* DataManager.swift */; };
 		9D8EE68F254F0D39002F38FF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE68E254F0D39002F38FF /* Config.swift */; };
 		9D8EE692254F0EFD002F38FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE691254F0EFD002F38FF /* Model.swift */; };
@@ -32,6 +33,7 @@
 		9D373A3E254ED51A009F9304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D373A41254ED51A009F9304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D373A43254ED51A009F9304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D5CE3322550480400E24F35 /* bookmyshow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmyshow.png; path = BrandIcons/bookmyshow.png; sourceTree = "<group>"; };
 		9D8EE689254F0B3C002F38FF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9D8EE68D254F0CCE002F38FF /* AppData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AppData.json; sourceTree = "<group>"; };
 		9D8EE68E254F0D39002F38FF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		9D373A34254ED518009F9304 /* SliceDiscountApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D5CE331255047E500E24F35 /* BrandAssets */,
 				9D8EE6AB254F3DE7002F38FF /* Cells */,
 				9D8EE69F254F30A5002F38FF /* BrandIcons */,
 				9D8EE68C254F0CB5002F38FF /* Data */,
@@ -91,6 +94,15 @@
 			);
 			path = SliceDiscountApp;
 			sourceTree = "<group>";
+		};
+		9D5CE331255047E500E24F35 /* BrandAssets */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CE3322550480400E24F35 /* bookmyshow.png */,
+			);
+			name = BrandAssets;
+			path = "/Users/embibe/Documents/My Projects/SliceDiscountApp/SliceDiscountApp/SliceDiscountApp";
+			sourceTree = "<absolute>";
 		};
 		9D8EE68C254F0CB5002F38FF /* Data */ = {
 			isa = PBXGroup;
@@ -179,6 +191,7 @@
 				9D373A42254ED51A009F9304 /* LaunchScreen.storyboard in Resources */,
 				9D373A3F254ED51A009F9304 /* Assets.xcassets in Resources */,
 				9D373A3D254ED518009F9304 /* Main.storyboard in Resources */,
+				9D5CE3332550480400E24F35 /* bookmyshow.png in Resources */,
 				9D8EE697254F2746002F38FF /* AppData.json in Resources */,
 				9D8EE6A8254F31B8002F38FF /* swiggy.png in Resources */,
 			);

@@ -76,7 +76,7 @@ class DiscountData {
             self.discount = dict[keys.discount.rawValue] as? String
             self.seller = dict[keys.seller.rawValue] as? String
             self.shareData = dict[keys.shareData.rawValue] as? String
-            self.sellerType = SellerType.sellerType(forSeller: seller ?? "default")
+            self.sellerType = SellerType.sellerType(forSeller: seller?.lowercased() ?? "default")
         } else {
             throw DecodingError.runtimeError("Bad Discount Data")
         }
@@ -105,16 +105,15 @@ enum SellerType {
     
     func brandLogo(forSeller seller : String?) -> UIImage? {
         if self != .others {
-        //let directory = Bundle.main.path(forResource: "BrandIcons", ofType: nil)
-            let directory = Bundle.main.bundlePath.appending("/SliceDiscountApp/SliceDiscountApp/BrandIcons")
+            let directory = Bundle.main.bundlePath
             if let contentsArray = try? FileManager.default.contentsOfDirectory(atPath: directory) {
-            let sellerName = seller?.lowercased() ?? "default"
-            if contentsArray.contains(sellerName + ".png") {
-                let imageURL = URL(fileURLWithPath: directory).appendingPathComponent(sellerName + ".png")
-                let image = UIImage(contentsOfFile: imageURL.path)
-                return image
+                let sellerName = seller?.lowercased() ?? "default"
+                if contentsArray.contains(sellerName + ".png") {
+                    let imageURL = URL(fileURLWithPath: directory).appendingPathComponent(sellerName + ".png")
+                    let image = UIImage(contentsOfFile: imageURL.path)
+                    return image
+                }
             }
-        }
         }
         return UIImage.image(forText: seller ?? "default")
     }

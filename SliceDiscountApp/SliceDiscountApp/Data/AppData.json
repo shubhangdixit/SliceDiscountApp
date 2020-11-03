@@ -33,7 +33,17 @@
         "discount": "30% OFF",
         "seller": "Swiggy",
         "shareData": "Hey, I am buying food using slice! Try using my invite code ABCD12345 to get credit."
-      }
+      },{
+          "voucherCode": "SWIGGYFOOD",
+          "voucherDesc": "applicable only on the first order that you place using the slice card",
+          "discountTitle": "₹100 off",
+          "discountDesc": "your first order on Swiggy using the slice card comes with ₹100 off.",
+          "validTill": "valid till Mar 31, 2019",
+          "isExpiringSoon": true,
+          "discount": "100 RS. OFF",
+          "seller": "Zomato",
+          "shareData": "Hey, I am buying food using slice! Try using my invite code ABCD12345 to get credit."
+        }
     ],
     [
       {

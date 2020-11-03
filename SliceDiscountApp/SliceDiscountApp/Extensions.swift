@@ -22,6 +22,25 @@ extension UIView {
     func setCorners(withRadius radius : CGFloat) {
         layer.cornerRadius = radius
     }
+    
+    func dropGradients(forColors colors : [CGColor], andLocations locations : [NSNumber] = []) {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = colors
+        if locations.count == colors.count {
+            gradient.locations = locations
+        }
+        layer.insertSublayer(gradient, at: 0)
+    }
+}
+
+extension UIViewController {
+     func addGradientView(withFrame frame : CGRect, Colors colors : [CGColor], andLocations locations : [NSNumber] = []) {
+        let subView = UIView(frame: frame)
+        self.view.addSubview(subView)
+        subView.dropGradients(forColors: colors, andLocations: locations)
+        self.view.sendSubviewToBack(subView)
+    }
 }
 
 extension UIImage {
