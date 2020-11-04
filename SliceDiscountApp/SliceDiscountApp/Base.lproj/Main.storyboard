@@ -419,12 +419,12 @@
                                                 <color key="textColor" red="0.21568627450980393" green="0.18823529411764706" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-NC-uzP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-NC-uzP">
                                                 <rect key="frame" x="326" y="0.0" width="30" height="56.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="9dK-Qc-8Ve"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="copy_icon"/>
+                                                <state key="normal" image="copy_icon"/>
                                                 <connections>
                                                     <action selector="copyButtonAction:" destination="xNq-mm-fbk" eventType="touchUpInside" id="aQE-Hy-q5P"/>
                                                 </connections>
