@@ -23,21 +23,19 @@ extension UIView {
         layer.cornerRadius = radius
     }
     
-    func dropGradients(forColors colors : [CGColor], andLocations locations : [NSNumber] = []) {
-        let gradient = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = colors
-        if locations.count == colors.count {
-            gradient.locations = locations
-        }
-        layer.insertSublayer(gradient, at: 0)
-    }
-    
     func addGradientView(withColors colors : [CGColor], andLocations locations : [NSNumber] = []) {
-        let subView = UIView(frame: self.bounds)
+        let subView = GradientView(frame: self.bounds)
         self.addSubview(subView)
+        let constraints = [
+            subView.topAnchor.constraint(equalTo: self.topAnchor),
+            subView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            subView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            subView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        ]
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(constraints)
         subView.backgroundColor = .clear
-        subView.dropGradients(forColors: colors, andLocations: locations)
+        subView.drawGradients(forColors: colors, andLocations: locations)
         self.sendSubviewToBack(subView)
     }
 }
