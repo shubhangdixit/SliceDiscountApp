@@ -32,14 +32,40 @@ extension UIView {
         }
         layer.insertSublayer(gradient, at: 0)
     }
+    
+    func addGradientView(withColors colors : [CGColor], andLocations locations : [NSNumber] = []) {
+        let subView = UIView(frame: self.bounds)
+        self.addSubview(subView)
+        subView.backgroundColor = .clear
+        subView.dropGradients(forColors: colors, andLocations: locations)
+        self.sendSubviewToBack(subView)
+    }
 }
 
 extension UIViewController {
-     func addGradientView(withFrame frame : CGRect, Colors colors : [CGColor], andLocations locations : [NSNumber] = []) {
-        let subView = UIView(frame: frame)
-        self.view.addSubview(subView)
-        subView.dropGradients(forColors: colors, andLocations: locations)
-        self.view.sendSubviewToBack(subView)
+
+func showToast(withMessage message : String) {
+
+    let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 80, y: self.view.frame.size.height-100, width: 160, height: 40))
+    toastLabel.backgroundColor = UIColor.slicePurple()
+    toastLabel.textColor = UIColor.white
+    toastLabel.font = UIFont(name: "HiraginoSans-W6", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium)
+    toastLabel.textAlignment = .center;
+    toastLabel.text = message
+    toastLabel.alpha = 1.0
+    toastLabel.layer.cornerRadius = 10;
+    toastLabel.clipsToBounds  =  true
+    self.view.addSubview(toastLabel)
+    UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut, animations: {
+         toastLabel.alpha = 0.0
+    }, completion: {(isCompleted) in
+        toastLabel.removeFromSuperview()
+    })
+} }
+
+extension UIColor {
+    class func slicePurple() -> UIColor {
+        return UIColor(displayP3Red: 54/255, green: 49/255, blue: 94/255, alpha: 1)
     }
 }
 

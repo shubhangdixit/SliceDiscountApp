@@ -13,7 +13,19 @@ enum Status {
     case error(String)
 }
 
+struct PromoIndexPath {
+    
+    let section : Int
+    let row : Int
+    
+    init(withSection section : Int, Row row : Int) {
+        self.section = section
+        self.row = row
+    }
+}
+
 class BusinessManager : NSObject {
+    
     @objc dynamic var discountsData : DiscountsModel?
     static let shared = BusinessManager()
     var dataStatus : Status = .updating
@@ -41,5 +53,14 @@ class BusinessManager : NSObject {
     
     func getDiscountData(forRow row : Int) -> [DiscountData] {
         return discountsData?.data[row] ?? []
+    }
+    
+    func discout(forIndex promoIndex : PromoIndexPath) -> DiscountData? {
+        if discountsData?.data.count ?? 0 > promoIndex.section {
+            if discountsData?.data[promoIndex.section].count ?? 0 > promoIndex.row {
+                return discountsData?.data[promoIndex.section][promoIndex.row]
+            }
+        }
+        return nil
     }
 }
