@@ -76,11 +76,11 @@
 		9D373A34254ED518009F9304 /* SliceDiscountApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D5CE36A2552FB9900E24F35 /* ViewControllers */,
 				9D8EE6AB254F3DE7002F38FF /* Cells */,
 				9D8EE69F254F30A5002F38FF /* BrandIcons */,
 				9D8EE68C254F0CB5002F38FF /* Data */,
 				9D373A35254ED518009F9304 /* AppDelegate.swift */,
-				9D373A39254ED518009F9304 /* HomeViewController.swift */,
 				9D373A3B254ED518009F9304 /* Main.storyboard */,
 				9D373A3E254ED51A009F9304 /* Assets.xcassets */,
 				9D373A40254ED51A009F9304 /* LaunchScreen.storyboard */,
@@ -90,9 +90,17 @@
 				9D8EE691254F0EFD002F38FF /* Model.swift */,
 				9D8EE694254F1C50002F38FF /* BusinessModel.swift */,
 				9D8EE699254F2931002F38FF /* Extensions.swift */,
-				9D5CE35B2552A70D00E24F35 /* PromoDetailsViewController.swift */,
 			);
 			path = SliceDiscountApp;
+			sourceTree = "<group>";
+		};
+		9D5CE36A2552FB9900E24F35 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D373A39254ED518009F9304 /* HomeViewController.swift */,
+				9D5CE35B2552A70D00E24F35 /* PromoDetailsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		9D8EE68C254F0CB5002F38FF /* Data */ = {
