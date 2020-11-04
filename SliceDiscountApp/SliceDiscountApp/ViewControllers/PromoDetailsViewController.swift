@@ -38,7 +38,7 @@ class PromoDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
         bannerView.setCorners(withRadius: promoDetailScreenValues.topViewCornerRadius)
         bannerView.clipsToBounds = true
         bannerView.layer.masksToBounds = true
-        bannerView.addGradientView(withColors: promoDetailScreenValues.gradientColors)
+        bannerView.addGradientView(withColors: promoDetailScreenValues.gradientColors, andLocations : promoDetailScreenValues.gradientLocations)
         bannerView.sendSubviewToBack(bannerImageView)
         
         brandImageBackGroundView.setCorners(withRadius: promoDetailScreenValues.brandImageCornerRadius)

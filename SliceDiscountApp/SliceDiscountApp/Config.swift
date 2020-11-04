@@ -25,6 +25,7 @@ struct PromoDetailScreenValues {
     let topViewCornerRadius : CGFloat = 15
     let brandImageCornerRadius : CGFloat = 7
     let gradientColors : [CGColor] = [UIColor(displayP3Red: 17/255, green: 9/255, blue: 47/255, alpha: 1).cgColor, UIColor.clear.cgColor, UIColor(displayP3Red: 32/255, green: 21/255, blue: 69/255, alpha: 1).cgColor]
+    let gradientLocations : [NSNumber] = [0, 0.65, 1]
     let defaultShareMessage = "Hey, I am buying food using slice!."
     let copyMessage = "Code copied"
 }
