@@ -8,7 +8,7 @@
 import UIKit
 
 class PromoDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet weak var topHeaderView: UIView!
     @IBOutlet weak var brandImageBackGroundView: UIView!
     @IBOutlet weak var bannerView: UIView!
@@ -72,12 +72,14 @@ class PromoDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @IBAction func shareButtonAction(_ sender: Any) {
         if let promoIndex = promoIndexPath, let promoData = BusinessManager.shared.discout(forIndex: promoIndex) {
-            let text = promoData.shareData
-            let textShare = [ text ?? promoDetailScreenValues.defaultShareMessage ] as [Any]
-            let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
-            self.present(activityViewController, animated: true, completion: nil)
+            DispatchQueue.main.async {[weak self] in
+                let text = promoData.shareData
+                let textShare = [ text ?? self?.promoDetailScreenValues.defaultShareMessage ?? ""] as [Any]
+                let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self?.view
+                activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
+                self?.present(activityViewController, animated: true, completion: nil)
+            }
         }
     }
     
